@@ -1,0 +1,22 @@
+on: 
+  workflow_dispatch
+
+name: test
+
+jobs: 
+  test:
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - uses: r-lib/actions/setup-r@master
+    - uses: r-lib/actions/setup-pandoc@master
+     
+    - name: Install spatial dependencies
+      run: sudo apt-get install libgdal-dev libproj-dev libgeos-dev libudunits2-dev netcdf-bin
+
+    - name: Install packages
+      run: R -e 'install.packages(c("sf", "rmarkdown"))'
+
+    - name: test script
+      run: Rscript test.R
