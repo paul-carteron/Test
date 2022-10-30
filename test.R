@@ -3,7 +3,6 @@ library(sf)
 dTolerance <- 0
 
 x <- st_sfc(st_point(c(-0.49, 45.42)), crs = 4326)
-x <- st_as_sfc(x)
 
 res <- x %>%
       st_make_valid() %>%
