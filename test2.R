@@ -1,5 +1,4 @@
 library(sf)
-library(httr2)
 library(tibble)
 
 # Test read_sf from url
