@@ -16,7 +16,7 @@ jobs:
       run: brew install gdal proj
 
     - name: Install packages
-      run: R -e 'install.packages(c("sf", "rmarkdown"))'
+      run: R -e 'install.packages(c("sf", "methods", "geojsonsf))'
 
     - name: test script
       run: Rscript test.R
