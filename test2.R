@@ -7,8 +7,8 @@ res1 <- read_sf(url)
 print(res1)
 
 # Test read_sf from httr2 string response
-res2 <- request(url) %>%
-  req_perform() %>%
-  resp_body_string() %>% 
-  read_sf()
-print(res2)
+# res2 <- request(url) %>%
+#   req_perform() %>%
+#   resp_body_string() %>% 
+#   read_sf()
+# print(res2)
