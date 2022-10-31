@@ -5,18 +5,15 @@ name: test
 
 jobs: 
   test:
-    runs-on: macOS-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
     - uses: r-lib/actions/setup-r@v2
     - uses: r-lib/actions/setup-pandoc@v2
-     
-    - name: Install spatial dependencies
-      run: brew install gdal proj
 
     - name: Install packages
-      run: R -e 'install.packages(c("sf", "tibble"))'
+      run: R -e 'install.packages(c("sf"))'
 
     - name: test script
       run: Rscript test.R
