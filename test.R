@@ -1,9 +1,21 @@
 library(sf)
 
-pt <- st_sfc(st_point(c(0, 60)), crs = 2154)
+# axis_order FALSE
+shape <- st_sfc(st_point(x = c(-4.344, 47.813)), crs = 4326)
+geom <- st_as_text(st_geometry(shape))
+print(geom)
+
 st_axis_order(F)
-print(st_transform(pt, 4326)[[1]])
+shape <- st_transform(shape, "CRS:84")
+geom <- st_as_text(st_geometry(shape))
+print(geom)
+
+# axis_order TRUE
+shape <- st_sfc(st_point(x = c(-4.344, 47.813)), crs = 4326)
+geom <- st_as_text(st_geometry(shape))
+print(geom)
 
 st_axis_order(T)
-print(st_transform(pt, 4326)[[1]])
-
+shape <- st_transform(shape, "CRS:84")
+geom <- st_as_text(st_geometry(shape))
+print(geom)
