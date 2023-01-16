@@ -15,7 +15,7 @@ jobs:
       run: sudo apt-get install libgdal-dev libproj-dev libgeos-dev libudunits2-dev netcdf-bin
 
     - name: Install packages
-      run: R -e 'install.packages(c("sf", "terra"))'
+      run: R -e 'install.packages(c("sf", "testthat"))'
 
     - name: test script
       run: Rscript test.R
